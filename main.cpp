@@ -1,5 +1,6 @@
 #include "mainwindow.h"
-#include "insulator.h"
+//#include "insulator.h"
+#include "transportpoint.h"
 #include <QApplication>
 #include <QtWidgets>
 
@@ -13,7 +14,8 @@ int main(int argc, char *argv[])
     QGraphicsView view(&scene);
 
     //Insulator* ins =
-            new Insulator(scene, Q_NULLPTR);
+//    new Insulator(scene, -30, 100, 4, Q_NULLPTR);
+    new TransportPoint(scene, -30, 100, 4, Q_NULLPTR);
     view.show();
     return a.exec();
 }

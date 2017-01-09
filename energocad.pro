@@ -25,9 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    insulator.cpp
+    insulator.cpp \
+    transportpoint.cpp
 
 HEADERS  += mainwindow.h \
-    insulator.h
+    insulator.h \
+    transportpoint.h
 
 FORMS    += mainwindow.ui

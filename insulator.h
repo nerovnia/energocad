@@ -2,36 +2,35 @@
 #define INSULATOR_H
 
 #include <QtWidgets>
+#include "transportpoint.h"
 
-class Insulator : public QGraphicsItemGroup
+//class Insulator : public QGraphicsItemGroup
+class Insulator : public TransportPoint
 {
 private:
-    int x1 = 0;
-    int x2 = 0;
-    int y1 = 0;
-    int y2 = 0;
-    int height = 4;
+/*
     int posx = 0;
     int posy = 0;
+    int zoom = 1;
+    int height = 4;
+*/
 public:
     // Constructor mothods
-    using QGraphicsItemGroup::QGraphicsItemGroup;
+    using TransportPoint::TransportPoint;
     Insulator() = default;
-    Insulator(QGraphicsScene &scene, QGraphicsItem *parent = Q_NULLPTR);
+    Insulator(TransportPoint &tp);
+    //Insulator(QGraphicsScene &scene, QGraphicsItem *parent = Q_NULLPTR);
+    Insulator(QGraphicsScene &scene, int x, int y, int zoom, QGraphicsItem *parent = Q_NULLPTR);
+    //setPosition(int posX, int posY);
+    //setZoom(int zoom);
 
     // Overrided mothods
-    QRectF boundingRect() const override;
     bool isObscuredBy(const QGraphicsItem *item) const override;
     QPainterPath opaqueArea() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = Q_NULLPTR) override;
-    int type() const override;
+//    int type() const override;
 
     // Other mothods
-    // Set coordinate mothods
-    void setX1(int x) { this->x1 = x; };
-    void setX2(int x) { this->x2 = x; };
-    void setY1(int y) { this->y1 = y; };
-    void setY2(int y) { this->y2 = y; };
 
     // Refrash method
     void repaint();
